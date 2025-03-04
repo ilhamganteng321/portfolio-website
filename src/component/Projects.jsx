@@ -34,7 +34,7 @@ const Projects = () => {
       title: "Portfolio Website",
       description: "built using react js technology.",
       image: image, // Gunakan gambar yang diimpor
-      github: "https://github.com/yourusername/ecommerce",
+      github: "https://github.com/ilhamganteng321/portfolio-website",
       liveDemo: "https://ecommerce.example.com",
     },
     {
