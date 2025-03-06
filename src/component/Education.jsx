@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 
 const Education = () => {
   const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
   const staggerChildren = {
     visible: {
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
       },
     },
   };
@@ -18,22 +18,22 @@ const Education = () => {
   const educationData = [
     {
       institution: "Universitas Logistik Dan Bisnis Internasional",
-      degree: "Informatic Enginering",
-      year: "2022 - Now ",
+      degree: "Informatic Engineering",
+      year: "2022 - Now",
       description:
-        "I have experience in programming with various languages and frameworks, including Flutter, Laravel, Vue.js, and .NET (Windows Forms). I have worked on diverse projects involving mobile, web, and desktop application development. My skills include backend development, database management, and working with APIs such as GraphQL, RESTful, and gRPC. Additionally, I am proficient in using Git for version control, VS Code as my primary editor, and Linux (Debian) as part of my development workflow",
+        "Experience in Flutter, Laravel, Vue.js, .NET, and more. Strong skills in backend development, database management, and API integration (GraphQL, REST, gRPC).",
     },
     {
-      institution: "Smk plus qurrota a'yun",
+      institution: "SMK Plus Qurrota A'yun",
       degree: "Teknik Komputer dan Jaringan",
       year: "2018 - 2021",
       description:
-        "I have learned the basics of computer networks, hardware, and programming. I am familiar with fundamental HTML and simple web development. Additionally, I have basic experience in operating system installation and network configuration.",
+        "Gained foundational knowledge in computer networks, hardware, and programming. Experience in basic web development and network configuration.",
     },
   ];
 
   return (
-    <section id="education" className="bg-white py-20">
+    <section id="education" className="bg-gradient-to-b from-blue-50 to-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -44,40 +44,38 @@ const Education = () => {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6"
+            className="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-12"
           >
             Education
           </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto"
-          >
-            My academic journey and the institutions that helped shape my career.
-          </motion.p>
         </motion.div>
 
-        {/* Education Timeline */}
+        {/* Timeline Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           variants={staggerChildren}
           viewport={{ once: true }}
-          className="space-y-8"
+          className="relative border-l-4 border-blue-500 pl-8 space-y-12"
         >
           {educationData.map((edu, index) => (
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="bg-gray-50 p-6 sm:p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 relative"
             >
+              {/* Timeline Dot */}
+              <div className="absolute left-[-1.25rem] top-4 w-8 h-8 bg-blue-500 rounded-full border-4 border-white" />
+
+              {/* Content */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800">{edu.institution}</h3>
-                  <p className="text-gray-600">{edu.degree}</p>
+                  <h3 className="text-2xl font-semibold text-gray-800">{edu.institution}</h3>
+                  <p className="text-blue-600 font-medium mt-1">{edu.degree}</p>
                 </div>
-                <span className="text-sm text-gray-500 mt-2 sm:mt-0">{edu.year}</span>
+                <span className="text-sm text-gray-500 mt-4 sm:mt-0">{edu.year}</span>
               </div>
-              <p className="text-gray-600 mt-4">{edu.description}</p>
+              <p className="text-gray-600 mt-6 leading-relaxed">{edu.description}</p>
             </motion.div>
           ))}
         </motion.div>
