@@ -7,6 +7,7 @@ import Skills from "../component/Skills";
 import About from "../component/About";
 import Projects from "../component/Projects";
 import Contact from "../component/Contact";
+import Footer from "../component/Footer";
 
 const Home = () => {
   const fadeInUp = {
@@ -34,6 +35,7 @@ const Home = () => {
       <About/>
       <Projects/>
       <Contact/>
+      <Footer/>
     </div>
   );
 };

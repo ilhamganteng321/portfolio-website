@@ -84,47 +84,57 @@ const Contact = () => {
             variants={fadeInUp}
             className="bg-gray-50 p-6 rounded-lg shadow-md"
           >
-            <form>
-              <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Your Name"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Your Email"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  rows="5"
-                  placeholder="Your Message"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300"
-              >
-                Send Message
-              </button>
-            </form>
+           <form
+  action="https://formspree.io/f/mkgjwoql"
+  method="POST"
+>
+  <div className="mb-4">
+    <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
+      Name
+    </label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      required
+      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500"
+      placeholder="Your Name"
+    />
+  </div>
+  <div className="mb-4">
+    <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+      Email
+    </label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      required
+      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500"
+      placeholder="Your Email"
+    />
+  </div>
+  <div className="mb-4">
+    <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">
+      Message
+    </label>
+    <textarea
+      name="message"
+      id="message"
+      required
+      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500"
+      rows="5"
+      placeholder="Your Message"
+    ></textarea>
+  </div>
+  <button
+    type="submit"
+    className="w-full bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+  >
+    Send Message
+  </button>
+</form>
+
           </motion.div>
         </motion.div>
       </div>
